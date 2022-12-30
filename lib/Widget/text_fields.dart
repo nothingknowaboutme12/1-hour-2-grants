@@ -39,7 +39,7 @@ class customtextfield2 extends StatelessWidget {
                     style: TextStyle(
                       fontWeight:
                           size.width > 600 ? FontWeight.w800 : FontWeight.w500,
-                      fontSize: size.width > 600 ? 12 : 8,
+                      fontSize: size.width > 600 ? 20 : 8,
                       letterSpacing: size.width > 600 ? 1.2 : null,
                       color: Colors.black87,
                     ),
@@ -113,7 +113,7 @@ class labeltextfield extends StatelessWidget {
               style: TextStyle(
                 fontWeight:
                     size.width > 600 ? FontWeight.w800 : FontWeight.w500,
-                fontSize: size.width > 600 ? 12 : 8,
+                fontSize: size.width > 600 ? 20 : 8,
                 letterSpacing: size.width > 600 ? 1.2 : null,
                 color: Colors.black87,
               ),

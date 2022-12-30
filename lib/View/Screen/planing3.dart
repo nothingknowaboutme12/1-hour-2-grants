@@ -31,6 +31,18 @@ class Planing extends StatefulWidget {
 }
 
 class _PlaningState extends State<Planing> {
+  @override
+  void dispose() {
+    widget.ProgramStatement.dispose();
+    widget.MissionStatement.dispose();
+    widget.GoalStatement.dispose();
+    widget.OutComeStatement.dispose();
+    widget.ProgramImpact.dispose();
+    widget.ProgramStatus.dispose();
+    widget.AGGFUNDER.dispose();
+    super.dispose();
+  }
+
   bool status = false;
   @override
   Widget build(BuildContext context) {
@@ -111,7 +123,7 @@ class _PlaningState extends State<Planing> {
                       length: 200,
                       controller: widget.ProgramImpact,
                       hinttext: "Type here...",
-                      text: "ENTER PROGRAM NAME",
+                      text: "ENTER PROGRAM IMPACT",
                     ),
                     SizedBox(
                       height: widget.size.height / 25,

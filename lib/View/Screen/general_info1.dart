@@ -67,7 +67,24 @@ class _GeneralInfoState extends State<GeneralInfo> {
   // }
   @override
   void dispose() {
-    // widget.OrganiztionName.dispose();
+    widget.OrganiztionName.dispose();
+    widget.EdfirstName.dispose();
+    widget.EdlastName.dispose();
+    widget.EdBio.dispose();
+    widget.EdEmail.dispose();
+    widget.EdPhone.dispose();
+    widget.GcEmail.dispose();
+    widget.GcPhone.dispose();
+    widget.PdFirstName.dispose();
+    widget.PdLastName.dispose();
+    widget.PdBio.dispose();
+    widget.PcFirstName.dispose();
+    widget.PcLastName.dispose();
+    widget.PcBio.dispose();
+    widget.establishedYear.dispose();
+    widget.yearofactive.dispose();
+    widget.OrganizationState.dispose();
+
     super.dispose();
   }
 
@@ -133,9 +150,6 @@ class _GeneralInfoState extends State<GeneralInfo> {
                                 ),
                               ),
                             ),
-                            // SizedBox(
-                            //   height: widget.size.height / 120,
-                            // ),
                             widget.imagepath.isNotEmpty
                                 ? Container(
                                     height: widget.size.height / 25,

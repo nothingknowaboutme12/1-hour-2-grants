@@ -15,6 +15,12 @@ class Participant6 extends StatefulWidget {
 
 class _Participant6State extends State<Participant6> {
   bool status = false;
+  @override
+  void dispose() {
+    widget.programpriorty.dispose();
+
+    super.dispose();
+  }
 
   @override
   void initState() {

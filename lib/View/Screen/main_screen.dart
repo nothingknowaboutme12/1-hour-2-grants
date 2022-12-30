@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // ENTER Impact Statement
   late TextEditingController ImpactStatement;
   // ENTER Impact Statement
-  late TextEditingController StatementStatics;
+  // late TextEditingController StatementStatics;
   // ENTER Impact Statement
   late TextEditingController zipCode;
   //input 1
@@ -164,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MissionStatement = TextEditingController();
     OutComeStatement = TextEditingController();
     ImpactStatement = TextEditingController();
-    StatementStatics = TextEditingController();
+    // StatementStatics = TextEditingController();
     GoalStatement = TextEditingController();
     zipCode = TextEditingController();
     input1 = TextEditingController();
@@ -234,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     ImpactStatement.dispose();
     OutComeStatement.dispose();
-    StatementStatics.dispose();
+    // StatementStatics.dispose();
     MissionStatement.dispose();
     GoalStatement.dispose();
     zipCode.dispose();
@@ -277,6 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   String pickedImagePath = "";
   bool status = false;
+  XFile? file;
   Future<void> pickImageFromGalley() async {
     ImagePicker picker = await ImagePicker();
     XFile? image = await picker.pickImage(source: ImageSource.gallery);
@@ -285,6 +286,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     if (image.path.isNotEmpty) {
       setState(() {
+        file = image;
         pickedImagePath = image.path;
       });
     }
@@ -516,8 +518,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Partner3.text.isNotEmpty &&
                                 Partner1Provides.text.isNotEmpty &&
                                 Partner2Provides.text.isNotEmpty &&
+                                pickedImagePath != null &&
                                 Partner3Provides.text.isNotEmpty) {
-                              Navigator.of(context).push(
+                              Navigator.of(context).pushAndRemoveUntil(
                                 MaterialPageRoute(
                                   builder: (context) => PdfView(
                                     OName: OrganiztionName.text,
@@ -544,14 +547,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                     GoalStatement: GoalStatement.text,
                                     OutComeStatement: OutComeStatement.text,
                                     ImpactStatement: ImpactStatement.text,
-                                    StaticsStatement: StatementStatics.text,
+                                    // StaticsStatement: StatementStatics.text,
                                     ToalBudget: TotalBudget.text,
                                     AmountScrud: AmountScured.text,
                                     AmountRequested: AmountRequested.text,
                                     ApplicableCategory: applicableCategory.text,
                                     ProgramPeriorty: programPeriorty.text,
                                     ProgramStatus: ProgramStatus.text,
-                                    StateReigion: zipCode.text,
+                                    StateRegion: zipCode.text,
                                     Input1: input1.text,
                                     Input2: input2.text,
                                     Input3: input3.text,
@@ -575,10 +578,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Partner3Provide: Partner3Provides.text,
                                     NPName: NPubliciaName.text,
                                     NPQuote: NQUOTE.text,
+                                    LPName: PublicianName.text,
+                                    LPQuote: PQUOTE.text,
                                     ProgramCategory: applicableCategory.text,
-                                    image: pickedImagePath,
+                                    imagepath: pickedImagePath,
                                   ),
                                 ),
+                                (Route<dynamic> route) => false,
                               );
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -588,6 +594,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       horizontal: size.width / 50),
                                   action: SnackBarAction(
                                     label: "Close",
+                                    textColor: listtilecolor,
                                     onPressed: () {},
                                   ),
                                   content: Text(
