@@ -10,18 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: "CDB",
+    return MaterialApp(
+      title: "1 HOUR 2 GRANTS",
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      // home: CLayout(
-      //   mobileScreenLayout: SplashScreen(),
-      //   WebScreenLayout: Scaffold(
-      //     body: Center(
-      //       child: Text("I am on the web"),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

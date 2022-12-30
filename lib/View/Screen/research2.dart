@@ -25,6 +25,16 @@ class Reasearch extends StatefulWidget {
 }
 
 class _ReasearchState extends State<Reasearch> {
+  @override
+  void dispose() {
+    widget.CLGIStatement.dispose();
+    widget.PublicianName.dispose();
+    widget.PQUOTE.dispose();
+    widget.NQUOTE.dispose();
+    widget.NPublicianName.dispose();
+    super.dispose();
+  }
+
   bool status = false;
   @override
   Widget build(BuildContext context) {

@@ -13,6 +13,12 @@ class LocationStatus extends StatefulWidget {
 }
 
 class _LocationStatusState extends State<LocationStatus> {
+  @override
+  void dispose() {
+    widget.zipCode.dispose();
+    super.dispose();
+  }
+
   bool status = false;
   @override
   Widget build(BuildContext context) {

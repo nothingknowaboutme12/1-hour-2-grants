@@ -19,6 +19,12 @@ class ProgramParticipant5 extends StatefulWidget {
 class _ProgramParticipant5State extends State<ProgramParticipant5> {
   bool status = false;
   @override
+  void dispose() {
+    widget.applicableCategory.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     widget.applicableCategory.text = "Please Select";
     super.initState();

@@ -26,6 +26,17 @@ class Partner extends StatefulWidget {
 }
 
 class _PartnerState extends State<Partner> {
+  @override
+  void dispose() {
+    widget.Partner1.dispose();
+    widget.Partner2.dispose();
+    widget.Partner3.dispose();
+    widget.Partner1Provides.dispose();
+    widget.Partner2Provides.dispose();
+    widget.Partner3Provides.dispose();
+    super.dispose();
+  }
+
   bool status = false;
   @override
   Widget build(BuildContext context) {
@@ -66,7 +77,7 @@ class _PartnerState extends State<Partner> {
                             length: 150,
                             controller: widget.Partner1Provides,
                             hinttext: "Type here...",
-                            text: "ENTER VPARTNER PROVIDES",
+                            text: "ENTER WHAT PARTNER 1 PROVIDES",
                           ),
                         ),
                       ],
@@ -82,7 +93,7 @@ class _PartnerState extends State<Partner> {
                             length: 100,
                             controller: widget.Partner2,
                             hinttext: "Type here...",
-                            text: "ENTER WHAT PARTNER 2 PROVIDES",
+                            text: "ENTER PARTNER 2",
                           ),
                         ),
                         SizedBox(

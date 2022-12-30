@@ -22,6 +22,14 @@ class Budget4 extends StatefulWidget {
 class _Budget4State extends State<Budget4> {
   bool status = false;
   @override
+  void dispose() {
+    widget.TotalBudget.dispose();
+    widget.AmountScured.dispose();
+    widget.AmountRequested.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [

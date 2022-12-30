@@ -47,6 +47,27 @@ class Evulations extends StatefulWidget {
 class _EvulationsState extends State<Evulations> {
   bool status = false;
   @override
+  void dispose() {
+    widget.input1.dispose();
+    widget.input2.dispose();
+    widget.input3.dispose();
+    widget.output1.dispose();
+    widget.output2.dispose();
+    widget.output3.dispose();
+    widget.outcome1.dispose();
+    widget.outcome2.dispose();
+    widget.outcome3.dispose();
+    widget.Verification1.dispose();
+    widget.Verification2.dispose();
+    widget.Verification3.dispose();
+    widget.Measure1.dispose();
+    widget.Measure2.dispose();
+    widget.Measure3.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
