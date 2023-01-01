@@ -10,16 +10,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "1 HOUR 2 GRANTS",
+    return const MaterialApp(
+      title: "CDB",
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      onUnknownRoute: (RouteSettings settings) {
-        return MaterialPageRoute<void>(
-          settings: settings,
-          builder: (BuildContext context) => SplashScreen(),
-        );
-      },
+      // home: CLayout(
+      //   mobileScreenLayout: SplashScreen(),
+      //   WebScreenLayout: Scaffold(
+      //     body: Center(
+      //       child: Text("I am on the web"),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
